@@ -2,7 +2,7 @@
 
 - 作者: 王青海
 
-- 邮箱: 13621213726@163.com
+- 邮箱: dev_vector@163.com
 
 - [github: https://github.com/QLwangqinghai/Playground](https://github.com/QLwangqinghai/Playground) 
 
