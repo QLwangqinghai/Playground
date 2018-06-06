@@ -81,7 +81,7 @@
 
 <h4 id='5.4'> other </h4>
 
-- [时间同步(Unimplemented)](https://github.com/QLwangqinghai/Playground/resources/md/http2.md)
+- [时间同步)](https://github.com/QLwangqinghai/Playground/resources/md/net/时间同步.md)
 
 <h2 id='6'> 六、数据安全 </h2>
 
