@@ -1,14 +1,14 @@
 # iOS
 
-- 作者: 王青海
+> 作者: 王青海
 
-- 邮箱: dev_vector@163.com
+> 邮箱: dev_vector@163.com
 
-- [github: https://github.com/QLwangqinghai/Playground](https://github.com/QLwangqinghai/Playground) 
+> [github: https://github.com/QLwangqinghai/Playground](https://github.com/QLwangqinghai/Playground) 
 
-- 至于为什么要写，一方面是归纳总结，对自己的知识做一番梳理， 另一方面希望每个读者都有所收获，做到“知其所以然”，再一方面，起到一个抛砖引玉的目的。
+> 至于为什么要写，一方面是归纳总结，对自己的知识做一番梳理， 另一方面希望每个读者都有所收获，做到“知其所以然”，再一方面，起到一个抛砖引玉的目的。
 
-- 现状：整理知识树过程中，可能结构不是很合理，待逐步完善
+> 现状：整理知识树过程中，可能结构不是很合理，待逐步完善
 
 目录： 
 
