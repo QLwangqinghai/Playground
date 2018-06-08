@@ -6,7 +6,9 @@
 
 - [github: https://github.com/QLwangqinghai/Playground](https://github.com/QLwangqinghai/Playground) 
 
-- 本文旨在交流学习、抛砖引玉。
+- 至于为什么要写，一方面是归纳总结，对自己的知识做一番梳理， 另一方面希望每个读者都有所收获，做到“知其所以然”，再一方面，起到一个抛砖引玉的目的。
+
+- 现状：整理知识树过程中，可能结构不是很合理，待逐步完善
 
 目录： 
 
@@ -66,6 +68,13 @@
 
 <h2 id='4'> 四、多线程 </h2>
 
+- 锁
+- 原子操作
+- 同步
+- 异步
+- runloop
+
+
 <h2 id='5'> 五、网络 </h2>
 
 <h4 id='5.1'> HTTP </h4>
@@ -74,10 +83,16 @@
 
 <h4 id='5.2'> SCTP </h4>
 
-<h4 id='5.3'> 数据序列化 </h4>
+> 研究中，待填坑
+
+
+<h4 id='5.3'> 数据 </h4>
 
 - [GoogleProtoBuffer(Unimplemented)](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/http2.md)
 - [JSON(Unimplemented)](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/http2.md)
+- [FlatBuffers(正在研究原理，待填坑)]
+- [常用压缩算法]
+
 
 <h4 id='5.4'> other </h4>
 
@@ -129,14 +144,28 @@
 
 <h4 id='9.1'> apple </h4>
 
-dispatch
-CoreFoundation
-Foundation
-swift-protobuf
-swift-runtime
-objc-runtime
 
-<h4 id='9.2'> others </h4>
+<h5 id='9.1.1'> libdispatch </h5>
+
+- dispatch_main() 做了什么？
+
+<h5 id='9.1.2'> CoreFoundation </h5>
+
+- retain release
+
+<h5 id='9.1.3'> Foundation </h5>
+
+<h5 id='9.1.4'> swift-protobuf </h5>
+
+
+<h5 id='9.1.5'> swift-libstd </h5>
+
+<h5 id='9.1.6'> runtime swift/objc </h5>
+
+- [swift runtime]
+- [objc runtime]
+
+<h5 id='9.2'> others </h5>
 
 FMDB
 SDWebImage
