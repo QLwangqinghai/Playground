@@ -1,19 +1,25 @@
 # UTF8编码
 
 ## 背景
+> 1. NSString -[NSString length] API局限性，官方文档是这么描述的：“The number of UTF-16 code units in the receiver.”, 显然不是字符个数。
+> 2. iOS开发过程中经常会遇到字符串长度限制，字符串字节限制等需求，往往做的不尽如人意。这里简单介绍下utf8编码规则。
+> 3. 有不少开发遇到了字符串截取crash的问题。
+> 4. Swift语言中引入了unicode字符支持，详见 String.UnicodeScalarView
 
-
-
+## 简介
+> UTF-8（8-bit Unicode Transformation Format）是一种针对Unicode的可变长度字符编码，又称万国码，由Ken Thompson于1992年创建。现在已经标准化为RFC 3629。UTF-8用1到6个字节编码Unicode字符。用在网页上可以统一页面显示中文简体繁体及其它语言（如英文，日文，韩文）。(节选自百度百科)
 
 ## 编码规则
-    /*
+>
      1字节 0xxxxxxx
      2字节 110xxxxx 10xxxxxx
      3字节 1110xxxx 10xxxxxx 10xxxxxx
      4字节 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
      5字节 111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
      6字节 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
-     */
+    
+## 实例代码
+- 字符串校验、字符个数
 
 ```c
 _Bool CStringScalarInit(CStringScalar * _Nonnull scalar, uint32_t code) {
@@ -122,3 +128,30 @@ _Bool CStringCheckUtf8StringWithLength(const char * _Nonnull utf8String, size_t 
     return CStringCheckUtf8Byte((const uint8_t *)utf8String, length, scalarCount, validByteCountRef);
 }
 ```
+
+- Swift OC 对比
+
+```
+let str0: NSString = "😂"
+let str1: NSString = "h"
+let str2: NSString = "人"
+
+print("str0.length", str0.length)
+print("str1.length", str1.length)
+print("str2.length", str2.length)
+
+let swiftString = "😂"
+print("swiftString.unicodeScalars.count", swiftString.unicodeScalars.count)
+print("swiftString.utf8.count", swiftString.utf8.count)
+print("swiftString.utf16.count", swiftString.utf16.count)
+```
+输出结果 
+>
+str0.length 2
+str1.length 1
+str2.length 1
+swiftString.unicodeScalars.count 1
+swiftString.utf8.count 4
+swiftString.utf16.count 2
+
+## 疑问为什么不用每个字节最高位标识字节的连续性? 这个没闹明白！
