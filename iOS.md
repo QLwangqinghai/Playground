@@ -50,6 +50,9 @@
 <h4 id='2.3'> Objective-C </h4>
 
 - [weak-strong-dance](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/weak-strong-dance.md)
+- [block中切勿使用_访问属性](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/block中_访问属性.md)
+
+
 
 <h4 id='2.4'> Swift </h4>
 
@@ -123,7 +126,7 @@
 
 <h4 id='7.1'> 字符串编码 </h4>
 
-- [utf8编码(Unimplemented)](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/code/utf8编码.md)
+- [utf8编码](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/code/utf8编码.md)
 
 <h4 id='7.2'> URL编码 </h4>
 
@@ -174,3 +177,7 @@ RxSwift
 AFNetworking/Alamofire
 
 
+<h2 id='10'> 十、编程规范 </h2>
+- log的那些事
+- KVO的正确写法
+- Swift中优雅的解包
