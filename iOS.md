@@ -44,7 +44,7 @@
 
 - [C11原子操作-_Atomic](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/C11atomic.md)
 
-- [once](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/once.md)
+- [once+单例](https://github.com/QLwangqinghai/Playground/tree/master/resources/md/once.md)
 
 
 <h4 id='2.3'> Objective-C </h4>

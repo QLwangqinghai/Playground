@@ -1,7 +1,7 @@
 # Once
 
 ## 题外话
-OC 、C++、C、Swift 全局变量
+OC 、C++、C、Swift 全局变量初始化时机。
 
 
 ##纯C环境下
@@ -108,7 +108,7 @@ public final class MySwiftManager2: NSObject {
 
 ```
 - 可以在初始化完成后做一些事的写法
-- 
+
 ```swift
 public final class MySwiftManager {
     var some: String? = ""
@@ -126,6 +126,6 @@ public let mySwiftManager: MySwiftManager = {
 ## Tips
 1、 尽量让单例的init方法私有， 不要暴露出去，除非你确定需要这么做
 
-2、 如果是个单例 init 方法尽量私有， 且用final 修饰类
+2、 单例尽量不允许继承， 用final 修饰类
 
-3、 关于命名：单例用share(我们一般是用的这种模式)，  default 默认的实例， 我们可以自已再初始化实例。（参考UIApplication.shared , NotificationCenter.default）
+3、 关于命名：单例用share(我们一般是用的这种模式)，  default 默认的实例， 我们可以自已再初始化实例。（比如：UIApplication.shared , NotificationCenter.default）

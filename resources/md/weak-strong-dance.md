@@ -101,3 +101,17 @@ self.completion= ^() {
     [property removeObserver: strongSelf forKeyPath:@"pathName"];
 };
 ```
+
+## 几个常用宏定义
+
+```C
+#define WeakSelf __weak typeof(self) weakSelf = self;
+
+#define WeakSelfToStrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
+
+#define WeakSelfToStrongSelfGuardSelf __strong typeof(weakSelf) strongSelf = weakSelf;\
+if (!strongSelf) {\
+return;\
+}\
+
+```
