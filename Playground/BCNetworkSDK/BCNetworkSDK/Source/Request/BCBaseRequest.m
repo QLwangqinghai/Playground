@@ -330,7 +330,7 @@ NSString *BCNetworkJOSNObjectToString(id obj) {
  *
  *    子类需重写此函数，对接口返回进行解析处理。如不处理则直接将数据数组返回给请求回调函数。
  *
- *    @param id 返回数据转化的字段数组
+ *    @param obj 返回数据转化的字段数组
  *
  *    @return 解析后的结果
  */
@@ -353,12 +353,14 @@ NSString *BCNetworkJOSNObjectToString(id obj) {
     return error;
 }
 
-+ (AFURLSessionManager*)defaultNetworkManager {
++ (AFURLSessionManager *)defaultNetworkManager {
     static AFURLSessionManager* __networkManager = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __networkManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:nil];
+        
+        //配置序列化响应
         AFHTTPResponseSerializer *serializer = [AFHTTPResponseSerializer serializer];
         __networkManager.responseSerializer = serializer;
         NSMutableSet *set = [serializer.acceptableContentTypes mutableCopy];
@@ -370,6 +372,19 @@ NSString *BCNetworkJOSNObjectToString(id obj) {
         [set addObject:@"text/plain"];
         [set addObject:@"text/json"];
         serializer.acceptableContentTypes = [set copy];
+        
+        
+        //安全配置
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+#if DEBUG
+        securityPolicy.validatesDomainName = NO;
+#else
+        securityPolicy.validatesDomainName = YES;
+#endif
+        
+//        securityPolicy.pinnedCertificates = [NSSet setWithArray:@[/*需要certData*/]];
+
+        //配置回调队列
         __networkManager.completionQueue = [BCNetworkDispatch serializationQueue];
     });
     

@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, BCNetworkResultType) {
 @property (nonatomic, strong) NSString *envName;
 
 /**
- *    接口名称
+ *    接口名称, 后期采用加密字符串
  */
 @property (nonatomic, strong) NSString *apiName;//  "/api/1.0"
 

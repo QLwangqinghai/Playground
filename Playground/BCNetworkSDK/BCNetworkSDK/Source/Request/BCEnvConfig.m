@@ -57,16 +57,17 @@
 @end
 @implementation BCEnvConfig
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (instancetype)init {
     BCLogWarn(@"BCEnvConfig init error, used initWithName:appID:host:seed: !!!");
-
     return nil;
 }
+#pragma clang diagnostic pop
 
 - (instancetype)initWithName:(NSString *)name {
     return [self initWithName:name appID:nil host:nil seed:nil];
 }
-
 
 - (instancetype)initWithName:(NSString *)name appID:(NSString *)appID host:(NSString *)host seed:(NSString *)seed {
     if (name.length <= 0) {
@@ -91,7 +92,7 @@
 }
 
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"<%@: %p> {name:%@, host:%@, seed:%@, info:%@}", [self class], self, self.name, self.host, self.seed, self.init];
+    return [NSString stringWithFormat:@"<%@: %p> {name:%@, host:%@, seed:%@, info:%@}", [self class], self, self.name, self.host, self.seed, self.info];
 }
 
 - (void)setSeed:(NSString *)seed {
